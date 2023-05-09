@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SplitTheBill</string>
+    <string name="name">Nome</string>
+    <string name="desc">Descrição dos ingredientes</string>
+    <string name="value">Valor pago</string>
+    <string name="save">Salvar</string>
+</resources>
