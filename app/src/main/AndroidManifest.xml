@@ -24,6 +24,10 @@
             android:name=".view.PessoaActivity"
             android:label="Pessoa">
         </activity>
+        <activity
+            android:name=".view.RachaActivity"
+            android:label="Racha Activity" >
+        </activity>
 
     </application>
 

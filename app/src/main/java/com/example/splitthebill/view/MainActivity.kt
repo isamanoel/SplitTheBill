@@ -68,8 +68,11 @@ class MainActivity : BaseActivity() {
                 true
             }
             R.id.racha -> {
-                carl.launch(Intent(this, RachaActivity::class.java))
+                val intent = Intent(this, RachaActivity::class.java)
+                intent.putExtra(EXTRA_PESSOA_LIST, ArrayList(pessoaList))
+                startActivity(intent)
                 true
+
             }
             else -> false
         }
@@ -86,7 +89,7 @@ class MainActivity : BaseActivity() {
                 Pessoa(
                     index,
                     "Nome $index",
-                    "Descrição dos ngredientes $index",
+                    "Descrição dos ingredientes $index",
                     index.toDouble()
                 )
             )
