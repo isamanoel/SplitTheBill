@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace 'com.example.splitthebill'
-    compileSdk 33
+    compileSdkPreview "UpsideDownCake"
 
     defaultConfig {
         applicationId "com.example.splitthebill"

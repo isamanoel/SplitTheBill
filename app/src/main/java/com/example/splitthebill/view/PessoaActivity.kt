@@ -22,7 +22,7 @@ class PessoaActivity : BaseActivity() {
                 id = generateId(),
                 name = acb.nameEt.text.toString(),
                 desc = acb.descEt.text.toString(),
-                value = acb.valueEt.text
+                value = acb.valueEt.text.toString().toDouble()
             )
 
             val resultIntent = Intent()

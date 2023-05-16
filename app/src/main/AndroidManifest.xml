@@ -20,6 +20,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".view.PessoaActivity"
+            android:label="Pessoa">
+        </activity>
+
     </application>
 
 </manifest>
