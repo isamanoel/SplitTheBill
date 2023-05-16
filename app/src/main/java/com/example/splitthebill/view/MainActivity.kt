@@ -84,7 +84,7 @@ class MainActivity : BaseActivity() {
     //função para preencher nossa DS
 
     private fun fillPessoaList(){
-        for(index in 1 .. 10){
+        for(index in 1 .. 21){
             pessoaList.add(
                 Pessoa(
                     index,

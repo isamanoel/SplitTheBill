@@ -5,11 +5,10 @@
         android:id="@+id/addContactMi"
         android:icon="@drawable/baseline_person_add_24"
         android:title="@string/add_pessoa"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
     <item
         android:id="@+id/racha"
         android:icon="@drawable/baseline_attach_money_24"
         android:title="@string/racha"
-        app:showAsAction="ifRoom" />
-
+        app:showAsAction="never" />
 </menu>
