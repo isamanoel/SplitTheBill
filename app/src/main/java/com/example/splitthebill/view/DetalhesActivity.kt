@@ -32,9 +32,12 @@ class DetalhesActivity : BaseActivity() {
             // Lógica para remover a pessoa da lista
             val pessoaList = intent.getParcelableArrayListExtra<Pessoa>("EXTRA_PESSOA_LIST")
             pessoaList?.remove(pessoa)
-            // Atualize a lista de pessoas no Intent
-            intent.putParcelableArrayListExtra("EXTRA_PESSOA", pessoaList)
-            setResult(Activity.RESULT_OK, intent)
+            println(pessoaList)
+
+            val resultIntent = Intent().apply {
+                putParcelableArrayListExtra("EXTRA_PESSOA_LIST", pessoaList)
+            }
+            setResult(Activity.RESULT_OK, resultIntent)
             finish()
         }
 
@@ -56,6 +59,7 @@ class DetalhesActivity : BaseActivity() {
                     Toast.makeText(this, "Pessoa atualizada com sucesso", Toast.LENGTH_SHORT).show()
                 }
             }
+            finish()
         }
     }
 

@@ -1,5 +1,6 @@
 package com.example.splitthebill.view
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -52,13 +53,21 @@ class MainActivity : BaseActivity() {
                 }
 
             }
+            if (result.resultCode == Activity.RESULT_OK) {
+                val updatedPessoaList = result.data?.getParcelableArrayListExtra<Pessoa>("EXTRA_PESSOA_LIST")
+                println("Lista atualizada: $updatedPessoaList")
+
+                // Faça o que for necessário com a lista atualizada
+                // por exemplo, atualize seu adaptador de lista ou realize outras operações
+
+                // ...
+            }
 
         }
 
         amb.pessoaLv.setOnItemClickListener { parent, view, position, id ->
             val pessoa = pessoaList[position]
             val intent = Intent(this, DetalhesActivity::class.java)
-            intent.putExtra("POSICAO", position)
             intent.putExtra("EXTRA_PESSOA", pessoa)
             intent.putExtra("EXTRA_PESSOA_LIST", ArrayList(pessoaList)) // Passa a lista como extra
             startActivity(intent)
