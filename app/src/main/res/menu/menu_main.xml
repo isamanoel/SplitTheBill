@@ -5,10 +5,15 @@
         android:id="@+id/addContactMi"
         android:icon="@drawable/baseline_person_add_24"
         android:title="@string/add_pessoa"
-        app:showAsAction="always" />
+        app:showAsAction="never" />
     <item
         android:id="@+id/racha"
         android:icon="@drawable/baseline_attach_money_24"
         android:title="@string/racha"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/deleteAll"
+        android:icon="@drawable/baseline_attach_money_24"
+        android:title="@string/deleteAll"
         app:showAsAction="never" />
 </menu>

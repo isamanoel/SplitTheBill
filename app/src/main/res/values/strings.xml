@@ -3,8 +3,14 @@
     <string name="name">Nome</string>
     <string name="desc">Descrição dos ingredientes</string>
     <string name="value">Valor pago</string>
+    <string name="nameD">Editar nome</string>
+    <string name="descD">Editar descrição dos ingredientes</string>
+    <string name="valueD">Editar valor pago</string>
     <string name="save">Salvar</string>
     <string name="add_pessoa">Adicionar pessoa</string>
     <string name="racha">Rachar</string>
+    <string name="delete">Deletar</string>
+    <string name="deleteAll">Limpar lista</string>
+    <string name="edit">Editar</string>
 
 </resources>

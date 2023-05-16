@@ -26,7 +26,11 @@
         </activity>
         <activity
             android:name=".view.RachaActivity"
-            android:label="Racha Activity" >
+            android:label="Racha" >
+        </activity>
+        <activity
+            android:name=".view.DetalhesActivity"
+            android:label="Detalhes" >
         </activity>
 
     </application>

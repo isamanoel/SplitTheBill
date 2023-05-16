@@ -11,7 +11,6 @@ import com.example.splitthebill.R
 import com.example.splitthebill.adapter.PessoaAdapter
 import com.example.splitthebill.databinding.ActivityMainBinding
 import com.example.splitthebill.model.Pessoa
-
 class MainActivity : BaseActivity() {
     private val amb: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
@@ -30,13 +29,14 @@ class MainActivity : BaseActivity() {
 
     private lateinit var carl: ActivityResultLauncher<Intent>
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(amb.root)
         supportActionBar?.subtitle = "Lista de pessoas"
 
         fillPessoaList()
         amb.pessoaLv.adapter = pessoaAdapter
+
 
         carl = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result ->
             if(result.resultCode == RESULT_OK){
@@ -54,6 +54,17 @@ class MainActivity : BaseActivity() {
             }
 
         }
+
+        amb.pessoaLv.setOnItemClickListener { parent, view, position, id ->
+            val pessoa = pessoaList[position]
+            val intent = Intent(this, DetalhesActivity::class.java)
+            intent.putExtra("POSICAO", position)
+            intent.putExtra("EXTRA_PESSOA", pessoa)
+            intent.putExtra("EXTRA_PESSOA_LIST", ArrayList(pessoaList)) // Passa a lista como extra
+            startActivity(intent)
+        }
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -74,6 +85,11 @@ class MainActivity : BaseActivity() {
                 true
 
             }
+            R.id.deleteAll -> {
+                pessoaList.clear()
+                pessoaAdapter.notifyDataSetChanged()
+                true
+            }
             else -> false
         }
     }
@@ -93,6 +109,19 @@ class MainActivity : BaseActivity() {
                     index.toDouble()
                 )
             )
+        }
+    }
+    private fun removerPessoa(position: Int) {
+        if (position in 0 until pessoaList.size) {
+            pessoaList.removeAt(position)
+            pessoaAdapter.notifyDataSetChanged()
+        }
+    }
+
+    private fun editarPessoa(position: Int, pessoa: Pessoa) {
+        if (position in 0 until pessoaList.size) {
+            pessoaList[position] = pessoa
+            pessoaAdapter.notifyDataSetChanged()
         }
     }
 }
